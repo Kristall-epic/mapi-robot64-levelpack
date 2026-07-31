@@ -1,4 +1,4 @@
--- name: [MAP] Robot 64 Level Pack
+-- name: [MAP] Robot 64 LevelPack
 -- description: Includes the levels Turtle Tops and Knoddy's Resort from Robot 64 as playable MAPi hangouts!
 
 LEVEL_KNODDY = level_register("level_LEVEL_KNODDY_entry", COURSE_NONE, "Knoddy's Resort", "knodresort", 28000, 0x00, 0x28, 0x28)
@@ -51,6 +51,17 @@ BGM_KNODDY = {
   [3] = audio_stream_load("platformzone_bgm.ogg")
 }
 
+BGM_TURTLE = {
+  --Main island
+  [1] = audio_stream_load("turtle_bgm.ogg"),
+	
+	--Underwater Cave
+	[2] = audio_stream_load("turtle-bgm-water.ogg"),
+	
+	--Always Wash Your Hands obby
+	[3] = audio_stream_load("platformzone_bgm.ogg")
+}
+
 if MAPi_Active then
   
   hangout_turtletops = MAPi.hangout_map_add(
@@ -59,18 +70,27 @@ if MAPi_Active then
     "An isle in the sky.",
     "zKevin",
     get_texture_info("prev-turtle"),
-    audio_stream_load("turtle_bgm.ogg"))
+    BGM_TURTLE)
   
-  --Adds the skybox from the original game
+  --Adds the skybox from the original game to the main area
   MAPi.hangout_add_skybox(hangout_turtletops, 
     SKYBOX_TURTLE)
+	
+	--Skips area 2	
+	MAPi.hangout_add_skybox(hangout_turtletops, nil)
+			
+	--Adds the platform zone skybox to the obby
+	MAPi.hangout_add_skybox(hangout_turtletops, 
+    SKYBOX_PLATFORM1)	
   
   --Makes the warp sound from robot 64 play when you warp to the level
   MAPi.hangout_add_entry_sound(hangout_turtletops, r64_entry_sound)
   
-  --Adds a light blue environment tint to the level
+  --Adds a light blue environment tint to the main level
   MAPi.hangout_add_env_tint(hangout_turtletops, {r = 200, g = 200, b = 255}, {x = 0.5, y = 0.5, z = 0})
-  
+	
+	--Adds a darker blue environment tint to the underwater cave
+  MAPi.hangout_add_env_tint(hangout_turtletops, {r = 100, g = 125, b = 205}, {x = 0.5, y = 0.5, z = 0})
   
   hangout_knoddy = MAPi.hangout_map_add(
     LEVEL_KNODDY, 

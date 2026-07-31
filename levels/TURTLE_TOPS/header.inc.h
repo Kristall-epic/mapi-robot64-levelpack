@@ -161,7 +161,7 @@ extern Vtx TURTLE_TOPS_dl_ok_mesh_layer_1_vtx_1[814];
 extern Gfx TURTLE_TOPS_dl_ok_mesh_layer_1_tri_1[];
 extern Vtx TURTLE_TOPS_dl_ok_mesh_layer_1_vtx_2[612];
 extern Gfx TURTLE_TOPS_dl_ok_mesh_layer_1_tri_2[];
-extern Vtx TURTLE_TOPS_dl_ok_mesh_layer_1_vtx_3[1492];
+extern Vtx TURTLE_TOPS_dl_ok_mesh_layer_1_vtx_3[1510];
 extern Gfx TURTLE_TOPS_dl_ok_mesh_layer_1_tri_3[];
 extern Vtx TURTLE_TOPS_dl_ok_mesh_layer_1_vtx_4[280];
 extern Gfx TURTLE_TOPS_dl_ok_mesh_layer_1_tri_4[];

@@ -9,6 +9,8 @@ r64_entry_sound = audio_sample_load("loadmapin.mp3")
 TEX_PLATFORM1_VERT = get_texture_info("platform_vert")
 TEX_PLATFORM1_HORIZ = get_texture_info("platform_horiz")
 
+TEX_PLATFORM2 = get_texture_info("turtle-purple-tower-sky")
+
 SKYBOX_TURTLE = {
       skytype = "box",
       up = get_texture_info("turtle_up"),
@@ -39,6 +41,16 @@ SKYBOX_PLATFORM1 = {
   left = TEX_PLATFORM1_HORIZ
 }
 
+SKYBOX_PLATFORM2 = {
+  skytype = "box",
+  up = TEX_PLATFORM2,
+  down = TEX_PLATFORM2,
+  right = TEX_PLATFORM2,
+  back = TEX_PLATFORM2,
+  front = TEX_PLATFORM2,
+  left = TEX_PLATFORM2
+}
+
 --Table with audio files for each of the areas
 BGM_KNODDY = {
   --Outside hotel
@@ -59,7 +71,10 @@ BGM_TURTLE = {
 	[2] = audio_stream_load("turtle-bgm-water.ogg"),
 	
 	--Always Wash Your Hands obby
-	[3] = audio_stream_load("platformzone_bgm.ogg")
+	[3] = audio_stream_load("platformzone_bgm.ogg"),
+	
+	--Purple Tower
+	[4] = audio_stream_load("platformzone2.ogg")
 }
 
 if MAPi_Active then
@@ -82,6 +97,10 @@ if MAPi_Active then
 	--Adds the platform zone skybox to the obby
 	MAPi.hangout_add_skybox(hangout_turtletops, 
     SKYBOX_PLATFORM1)	
+	
+	--Adds the platform zone 2 skybox to the tower
+	MAPi.hangout_add_skybox(hangout_turtletops, 
+    SKYBOX_PLATFORM2)		
   
   --Makes the warp sound from robot 64 play when you warp to the level
   MAPi.hangout_add_entry_sound(hangout_turtletops, r64_entry_sound)

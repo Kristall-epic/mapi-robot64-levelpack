@@ -1,0 +1,17 @@
+extern const GeoLayout r64cylinder_geo[];
+extern Lights1 r64cylinder_Spin2Mtl_003_f3d_lights;
+extern Lights1 r64cylinder_Spin5Mtl_003_f3d_lights;
+extern u8 r64cylinder_lowresmove_ci8[];
+extern u8 r64cylinder_lowresmove_pal_rgba16[];
+extern u8 r64cylinder_lowrescylinder_ci8[];
+extern u8 r64cylinder_lowrescylinder_pal_rgba16[];
+extern Vtx r64cylinder_cylinder_mesh_layer_1_vtx_cull[8];
+extern Vtx r64cylinder_cylinder_mesh_layer_1_vtx_0[136];
+extern Gfx r64cylinder_cylinder_mesh_layer_1_tri_0[];
+extern Vtx r64cylinder_cylinder_mesh_layer_1_vtx_1[103];
+extern Gfx r64cylinder_cylinder_mesh_layer_1_tri_1[];
+extern Gfx mat_r64cylinder_Spin2Mtl_003_f3d[];
+extern Gfx mat_revert_r64cylinder_Spin2Mtl_003_f3d[];
+extern Gfx mat_r64cylinder_Spin5Mtl_003_f3d[];
+extern Gfx mat_revert_r64cylinder_Spin5Mtl_003_f3d[];
+extern Gfx r64cylinder_cylinder_mesh_layer_1[];

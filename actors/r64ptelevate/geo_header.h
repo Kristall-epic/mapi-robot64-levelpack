@@ -1,0 +1,10 @@
+extern const GeoLayout r64ptelevate_geo[];
+extern Lights1 r64ptelevate_Move2Mtl_003_f3d_lights;
+extern u8 r64ptelevate_lowresmove_ci8[];
+extern u8 r64ptelevate_lowresmove_pal_rgba16[];
+extern Vtx r64ptelevate_ptelevate_mesh_layer_1_vtx_cull[8];
+extern Vtx r64ptelevate_ptelevate_mesh_layer_1_vtx_0[24];
+extern Gfx r64ptelevate_ptelevate_mesh_layer_1_tri_0[];
+extern Gfx mat_r64ptelevate_Move2Mtl_003_f3d[];
+extern Gfx mat_revert_r64ptelevate_Move2Mtl_003_f3d[];
+extern Gfx r64ptelevate_ptelevate_mesh_layer_1[];

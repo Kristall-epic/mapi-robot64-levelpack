@@ -1,0 +1,10 @@
+extern const GeoLayout r64pushplat_geo[];
+extern Lights1 r64pushplat_Move2Mtl_003_f3d_lights;
+extern u8 r64pushplat_lowresmove_ci8[];
+extern u8 r64pushplat_lowresmove_pal_rgba16[];
+extern Vtx r64pushplat_pushplatform_mesh_layer_1_vtx_cull[8];
+extern Vtx r64pushplat_pushplatform_mesh_layer_1_vtx_0[28];
+extern Gfx r64pushplat_pushplatform_mesh_layer_1_tri_0[];
+extern Gfx mat_r64pushplat_Move2Mtl_003_f3d[];
+extern Gfx mat_revert_r64pushplat_Move2Mtl_003_f3d[];
+extern Gfx r64pushplat_pushplatform_mesh_layer_1[];

@@ -167,7 +167,7 @@ _G.id_bhvR64PtElevate = hook_behavior(nil, OBJ_LIST_SURFACE, true, r64_ptelevate
 
 
 
-
+--[[
 function load_bhvs_to_ame()
 	AmeTools64.add_object_to_list("R64_SOAP", id_bhvR64Soap, E_MODEL_SOAP)
 	AmeTools64.add_object_to_list("R64_PLANET", id_bhvR64Planet, E_MODEL_PLANET)
@@ -178,3 +178,5 @@ function load_bhvs_to_ame()
 end
 
 hook_event(HOOK_ON_MODS_LOADED, load_bhvs_to_ame)
+
+]]

@@ -102,11 +102,17 @@ function update_purple_tower_cam()
 
     vec3f_copy(c.focus, focusPos)
     vec3f_copy(c.pos, camPos)
-	else
-	  camera_unfreeze()
 	end
 	
 end
+
+--resets the camera to the normal position when mario exits purple tower
+function stop_2d_cam()
+  if gNetworkPlayers[0].currAreaIndex ~= 4 then
+	  camera_unfreeze()
+	end
+end
+
 
 function mapi_load()
   
@@ -148,6 +154,9 @@ function mapi_load()
   
 	--hooks a function that updates the 2D mechanic of purple tower to run in the hangout
 	MAPi.hangout_hook_event(hangout_turtletops, HOOK_UPDATE, update_purple_tower_cam)
+	
+	--unfreezes the camera once you exit purple tower
+	MAPi.hangout_hook_event(hangout_turtletops, HOOK_ON_WARP, stop_2d_cam)
 	
   hangout_knoddy = MAPi.hangout_map_add(
     LEVEL_KNODDY, 

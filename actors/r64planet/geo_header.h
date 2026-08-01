@@ -1,0 +1,15 @@
+extern const GeoLayout r64planet_geo[];
+extern Lights1 r64planet_Planet1Mtl_f3d_lights;
+extern Lights1 r64planet_Ring1Mtl_f3d_lights;
+extern u8 r64planet_Planet1_diff_rgba32[];
+extern u8 r64planet_Ring1_diff_rgba32[];
+extern Vtx r64planet_objplanet_mesh_layer_1_vtx_cull[8];
+extern Vtx r64planet_objplanet_mesh_layer_1_vtx_0[300];
+extern Gfx r64planet_objplanet_mesh_layer_1_tri_0[];
+extern Vtx r64planet_objplanet_mesh_layer_1_vtx_1[110];
+extern Gfx r64planet_objplanet_mesh_layer_1_tri_1[];
+extern Gfx mat_r64planet_Planet1Mtl_f3d[];
+extern Gfx mat_revert_r64planet_Planet1Mtl_f3d[];
+extern Gfx mat_r64planet_Ring1Mtl_f3d[];
+extern Gfx mat_revert_r64planet_Ring1Mtl_f3d[];
+extern Gfx r64planet_objplanet_mesh_layer_1[];

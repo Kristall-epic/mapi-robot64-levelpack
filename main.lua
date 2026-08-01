@@ -74,10 +74,41 @@ BGM_TURTLE = {
 	[3] = audio_stream_load("platformzone_bgm.ogg"),
 	
 	--Purple Tower
-	[4] = audio_stream_load("platformzone2.ogg")
+	[4] = audio_stream_load("platformzone2.ogg"),
+	
+	--Beebo Wings Into The Sky
+  [5] = audio_stream_load("turtle_bgm.ogg")
 }
 
-if MAPi_Active then
+--Adds the 2D camera the purple tower has in Robot 64
+function update_purple_tower_cam()
+  m = gMarioStates[0]
+  if gNetworkPlayers[0].currAreaIndex == 4 then
+	  m.pos.x = 0
+		
+		camera_freeze()
+    local c = gLakituState
+    local focusPos = {
+      x = 0,
+      y = math.lerp(c.focus.y, m.pos.y, 0.1),
+      z = m.pos.z
+    }
+    
+    local camPos = {
+      x = 2000,
+      y = math.lerp(c.pos.y, m.pos.y + 150, 0.1),
+      z = m.pos.z
+    }
+
+    vec3f_copy(c.focus, focusPos)
+    vec3f_copy(c.pos, camPos)
+	else
+	  camera_unfreeze()
+	end
+	
+end
+
+function mapi_load()
   
   hangout_turtletops = MAPi.hangout_map_add(
     LEVEL_TURTLE, 
@@ -100,7 +131,11 @@ if MAPi_Active then
 	
 	--Adds the platform zone 2 skybox to the tower
 	MAPi.hangout_add_skybox(hangout_turtletops, 
-    SKYBOX_PLATFORM2)		
+    SKYBOX_PLATFORM2)
+		
+	--Adds the turtle tops skybox to the beebo wings into the sky subarea	
+	MAPi.hangout_add_skybox(hangout_turtletops, 
+    SKYBOX_TURTLE)	
   
   --Makes the warp sound from robot 64 play when you warp to the level
   MAPi.hangout_add_entry_sound(hangout_turtletops, r64_entry_sound)
@@ -111,6 +146,9 @@ if MAPi_Active then
 	--Adds a darker blue environment tint to the underwater cave
   MAPi.hangout_add_env_tint(hangout_turtletops, {r = 100, g = 125, b = 205}, {x = 0.5, y = 0.5, z = 0})
   
+	--hooks a function that updates the 2D mechanic of purple tower to run in the hangout
+	MAPi.hangout_hook_event(hangout_turtletops, HOOK_UPDATE, update_purple_tower_cam)
+	
   hangout_knoddy = MAPi.hangout_map_add(
     LEVEL_KNODDY, 
     "Knoddy's Resort",
@@ -139,7 +177,7 @@ if MAPi_Active then
   --Adds an orange environment tint to the first area (outside)
   MAPi.hangout_add_env_tint(hangout_knoddy, {r = 255, g = 180, b = 160}, {x = -10,y = 1,z = 0
   })
-  
-  else
-    djui_popup_create("MAPi is not active! Activate to use this mod", 2)
+	
 end
+
+hook_event(HOOK_ON_MODS_LOADED, mapi_load)

@@ -89,7 +89,7 @@ const LevelScript level_TURTLE_TOPS_entry[] = {
 		OBJECT(MODEL_NONE, 0, 2497, 6022, 0, 0, 0, (10 << 24) | (0x13 << 16), id_bhvWarp),
 		OBJECT(MODEL_NONE, 0, 8813, 5896, 0, 0, 0, (10 << 24) | (0x13 << 16), id_bhvWarp),
 		OBJECT(E_MODEL_HEART, 0, 2497, 5556, 0, -180, 0, (0x0A << 16), id_bhvRecoveryHeart),
-		OBJECT(MODEL_NONE, 0, 2469, 5756, 0, -180, 0, (0x0A << 16), id_bhvAirborneWarp),
+		OBJECT(MODEL_NONE, 0, 2469, 5756, 0, -90, 0, (0x0A << 16), id_bhvAirborneWarp),
 		TERRAIN(TURTLE_TOPS_area_4_collision),
 		MACRO_OBJECTS(TURTLE_TOPS_area_4_macro_objs),
 		STOP_MUSIC(0),

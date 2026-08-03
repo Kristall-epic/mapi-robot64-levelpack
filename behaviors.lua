@@ -3,6 +3,9 @@ E_MODEL_PLANET = smlua_model_util_get_id("r64planet_geo")
 E_MODEL_CYLINDER = smlua_model_util_get_id("r64cylinder_geo")
 E_MODEL_PUSHPLAT = smlua_model_util_get_id("r64pushplat_geo")
 E_MODEL_PT_ELEVATE = smlua_model_util_get_id("r64ptelevate_geo")
+E_MODEL_R64_TURTLE_PLATFORM = smlua_model_util_get_id("r64turtleplat_geo")
+E_MODEL_R64_CAVECUBE = smlua_model_util_get_id("r64cavecube_geo")
+E_MODEL_R64_BREAKABLE = smlua_collision_util_get("r64breakable_geo")
 
 SOAP_ACT_IDLE = 0
 SOAP_ACT_DIE = 1
@@ -64,8 +67,8 @@ end
 function r64_planet_loop(o)
   load_object_collision_model()
 
-  o.oFaceAngleYaw = o.oFaceAngleYaw + 0x300
-  o.oAngleVelYaw = 0x300
+  o.oFaceAngleYaw = o.oFaceAngleYaw + ((o.oBehParams >> 24) == 0 and 1 or -1)*0x150
+  o.oAngleVelYaw = ((o.oBehParams >> 24) == 0 and 1 or -1)*0x150
 	
 end
 
@@ -159,3 +162,37 @@ function r64_pt_cylinder_elevate_loop(o)
 end
 
 _G.id_bhvR64CylinderElevate = hook_behavior(nil, OBJ_LIST_SURFACE, true, r64_pt_cylinder_elevate_init, r64_pt_cylinder_elevate_loop)
+
+function r64_turtle_plat_init(o)
+  o.oFlags = OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE
+	o.collisionData = smlua_collision_util_get("r64turtleplat_collision")
+end
+
+function r64_turtle_plat_loop(o)
+  load_object_collision_model()
+
+  o.oFaceAngleYaw = o.oFaceAngleYaw + ((o.oBehParams >> 24) == 0 and 1 or -1)*0x100
+  o.oAngleVelYaw = ((o.oBehParams >> 24) == 0 and 1 or -1)*0x100
+	
+end
+
+_G.id_bhvR64TurtlePlatform = hook_behavior(nil, OBJ_LIST_SURFACE, true, r64_turtle_plat_init, r64_turtle_plat_loop)
+
+
+function r64_cavecube_init(o)
+  o.oFlags = OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE
+	o.collisionData = smlua_collision_util_get("r64cavecube_collision")
+end
+
+function r64_cavecube_loop(o)
+  load_object_collision_model()
+
+  o.oFaceAngleYaw = o.oFaceAngleYaw + ((o.oBehParams >> 24) == 0 and 1 or -1)*0x100
+  o.oAngleVelYaw = ((o.oBehParams >> 24) == 0 and 1 or -1)*0x100
+	
+	o.oFaceAnglePitch = o.oFaceAnglePitch + ((o.oBehParams >> 24) == 0 and 1 or -1)*0x100
+  o.oAngleVelPitch = ((o.oBehParams >> 24) == 0 and 1 or -1)*0x100
+	
+end
+
+_G.id_bhvR64Cavecube = hook_behavior(nil, OBJ_LIST_SURFACE, true, r64_cavecube_init, r64_cavecube_loop)

@@ -1,0 +1,17 @@
+extern const GeoLayout r64turtleplat_geo[];
+extern Lights1 r64turtleplat_grass_lights;
+extern Lights1 r64turtleplat_dirt_lights;
+extern u8 r64turtleplat_Untitled231_20250804104910_ci8[];
+extern u8 r64turtleplat_Untitled231_20250804104910_pal_rgba16[];
+extern u8 r64turtleplat_Untitled231_20250804104848_ci8[];
+extern u8 r64turtleplat_Untitled231_20250804104848_pal_rgba16[];
+extern Vtx r64turtleplat_spinplat_mesh_layer_1_vtx_cull[8];
+extern Vtx r64turtleplat_spinplat_mesh_layer_1_vtx_0[7];
+extern Gfx r64turtleplat_spinplat_mesh_layer_1_tri_0[];
+extern Vtx r64turtleplat_spinplat_mesh_layer_1_vtx_1[15];
+extern Gfx r64turtleplat_spinplat_mesh_layer_1_tri_1[];
+extern Gfx mat_r64turtleplat_grass[];
+extern Gfx mat_revert_r64turtleplat_grass[];
+extern Gfx mat_r64turtleplat_dirt[];
+extern Gfx mat_revert_r64turtleplat_dirt[];
+extern Gfx r64turtleplat_spinplat_mesh_layer_1[];

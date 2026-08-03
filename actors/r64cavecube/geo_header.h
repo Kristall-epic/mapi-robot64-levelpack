@@ -1,0 +1,10 @@
+extern const GeoLayout r64cavecube_geo[];
+extern Lights1 r64cavecube_sand_lights;
+extern u8 r64cavecube_Untitled231_20250804104901_ci8[];
+extern u8 r64cavecube_Untitled231_20250804104901_pal_rgba16[];
+extern Vtx r64cavecube_objcavecube_mesh_layer_1_vtx_cull[8];
+extern Vtx r64cavecube_objcavecube_mesh_layer_1_vtx_0[32];
+extern Gfx r64cavecube_objcavecube_mesh_layer_1_tri_0[];
+extern Gfx mat_r64cavecube_sand[];
+extern Gfx mat_revert_r64cavecube_sand[];
+extern Gfx r64cavecube_objcavecube_mesh_layer_1[];

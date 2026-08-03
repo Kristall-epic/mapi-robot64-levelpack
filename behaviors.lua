@@ -133,3 +133,29 @@ function r64_ptelevate_loop(o)
 end
 
 _G.id_bhvR64PtElevate = hook_behavior(nil, OBJ_LIST_SURFACE, true, r64_ptelevate_init, r64_ptelevate_loop)
+
+function r64_pt_cylinder_elevate_init(o)
+  o.oFlags = OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE
+	o.collisionData = smlua_collision_util_get("r64cylinder_collision")
+	o.oHomeX = o.oPosX
+	o.oHomeY = o.oPosY
+	o.oHomeZ = o.oPosZ
+	o.oForwardVel = 40
+end
+
+function r64_pt_cylinder_elevate_loop(o)
+  load_object_collision_model()
+	
+	o.oPosY = approach_f32(o.oPosY, o.oHomeY + 1000*o.oAction, o.oForwardVel, o.oForwardVel)
+	
+	if o.oTimer > 60 then
+	  o.oTimer = 0
+		o.oAction = 1 - o.oAction
+	end
+	
+	o.oFaceAnglePitch = o.oFaceAnglePitch + 0x100
+  o.oAngleVelPitch = 0x100
+
+end
+
+_G.id_bhvR64CylinderElevate = hook_behavior(nil, OBJ_LIST_SURFACE, true, r64_pt_cylinder_elevate_init, r64_pt_cylinder_elevate_loop)
